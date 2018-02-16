@@ -9,18 +9,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class GreetingComplete {
+public class GreetingController {
 
 	private static final String template = "Hello, %s!";
 	
-	// http://localhost:8080/greeting?name=Edgar
-	@RequestMapping("/greetingC")
-	public String greeting(@RequestParam(value="name", defaultValue="World")String name) {
+	// http://localhost:8080/hello?name=Edgar
+	@RequestMapping("/hello")
+	public String hello(@RequestParam(value="name", defaultValue="World")String name) {
 		return String.format(template, name);
 	}
 	
-	@RequestMapping("/greetingCPerson")
-	public String greetingPerson(@RequestParam(value="name", defaultValue="World")String name) {
+	@RequestMapping("/greeting")
+	public String greeting(@RequestParam(value="name", defaultValue="World")String name) {
 		Person myPerson = new Person(name);
 		myPerson.setAge(35);
 		
