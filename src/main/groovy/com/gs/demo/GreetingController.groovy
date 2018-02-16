@@ -31,7 +31,7 @@ class GreetingController {
 		def myage = myPerson.age
 		
 		def message = null
-		if(mylist.contains(myname)) {
+		if(myname in mylist) {
 			message = "Welcome come back, $myname!"
 		} else if(myage > 18) {
 			message = myPerson.sayHello()
