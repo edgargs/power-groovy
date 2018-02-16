@@ -9,7 +9,7 @@ class GreetingPower {
 
     // http://localhost:8080/hello?name=Edgar
     @RequestMapping("/hello")
-    public String greeting(@RequestParam(value="name", defaultValue="World")String name) {
-        return "Hello, ${name}!"
+    public String greeting(String name) {
+        return "Hello, ${name?:'World'}!"
     }
 }

@@ -9,17 +9,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class GreetingController {
+public class GreetingComplete {
 
 	private static final String template = "Hello, %s!";
 	
 	// http://localhost:8080/greeting?name=Edgar
-	@RequestMapping("/greeting")
+	@RequestMapping("/greetingC")
 	public String greeting(@RequestParam(value="name", defaultValue="World")String name) {
 		return String.format(template, name);
 	}
 	
-	@RequestMapping("/greetingPerson")
+	@RequestMapping("/greetingCPerson")
 	public String greetingPerson(@RequestParam(value="name", defaultValue="World")String name) {
 		Person myPerson = new Person(name);
 		myPerson.setAge(35);
