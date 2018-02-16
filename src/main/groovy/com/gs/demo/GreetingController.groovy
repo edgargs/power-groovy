@@ -27,8 +27,7 @@ class GreetingController {
 		mylist.add "Rob"
 		mylist.add "Emmy"
 		
-		def myname = myPerson.name
-		def myage = myPerson.age
+		def (myname, myage) = [myPerson.name, myPerson.age]
 		
 		def message = null
 		if(myname in mylist) {
