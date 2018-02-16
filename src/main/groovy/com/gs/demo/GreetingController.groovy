@@ -11,33 +11,33 @@ import java.util.Map
 @RestController
 class GreetingController {
 
-	private static final String template = "Hello, %s!"
+	private static final def template = "Hello, %s!"
 	
 	// http://localhost:8080/hello?name=Edgar
 	@RequestMapping("/hello")
-	String hello(@RequestParam(value="name", defaultValue="World")String name) {
+	def hello(@RequestParam(value="name", defaultValue="World")def name) {
 		String.format(template, name)
 	}
 	
 	@RequestMapping("/greeting")
-	String greeting(@RequestParam(value="name", defaultValue="World")String name) {
-		Person myPerson = new Person(name)
+	def greeting(@RequestParam(value="name", defaultValue="World")def name) {
+		def myPerson = new Person(name)
 		myPerson.setAge(35)
 		
 		Map<String, Double> mapCryptoCurrency = new HashMap<>()
 		mapCryptoCurrency.put "XPR",1.07
 		mapCryptoCurrency.put "BTC",2.09
-		String virtual = "The price for \"BTC\" is " + mapCryptoCurrency.get("BTC")
+		def virtual = "The price for \"BTC\" is " + mapCryptoCurrency.get("BTC")
 		
 		ArrayList<String> mylist = new ArrayList<>()
 		mylist.add "Grace"
 		mylist.add "Rob"
 		mylist.add "Emmy"
 		
-		String myname = myPerson.getName()
-		int myage = myPerson.getAge()
+		def myname = myPerson.getName()
+		def myage = myPerson.getAge()
 		
-		String message = null
+		def message = null
 		if(mylist.contains(myname)) {
 			message = "Welcome come back, " + myname + "!"
 		} else if(myage > 18) {
@@ -50,26 +50,26 @@ class GreetingController {
 
 class Person {
 
-	private String name
+	private def name
 	private int age
 	
 	Person() {		
 	}
 	
-	Person(String name, int age) {
+	Person(def name, int age) {
 		this.name = name
 		this.age = age
 	}
 	
-	Person(String name) {
+	Person(def name) {
 		this.name = name
 	}
 	
-	String getName() {
+	def getName() {
 		this.name
 	}
 	
-	void setName(String name) {
+	void setName(def name) {
 		this.name = name
 	}
 	
@@ -81,8 +81,8 @@ class Person {
 		this.age = age
 	}
 	
-	String sayHello() {
-		String message = ""
+	def sayHello() {
+		def message = ""
 		message = message + "Hello,\n"
 		message = message + "My name is: " + this.name +"\n"
 		message = message + "and have "+ this.age + " years old."
