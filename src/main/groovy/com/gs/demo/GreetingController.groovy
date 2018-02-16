@@ -16,7 +16,7 @@ public class GreetingController {
 	// http://localhost:8080/hello?name=Edgar
 	@RequestMapping("/hello")
 	public String hello(@RequestParam(value="name", defaultValue="World")String name) {
-		return String.format(template, name)
+		String.format(template, name)
 	}
 	
 	@RequestMapping("/greeting")
@@ -43,7 +43,7 @@ public class GreetingController {
 		} else if(myage > 18) {
 			message = myPerson.sayHello()
 		}
-		return message
+		message
 	}
 	
 }
@@ -66,7 +66,7 @@ class Person {
 	}
 	
 	public String getName() {
-		return this.name
+		this.name
 	}
 	
 	public void setName(String name) {
@@ -74,7 +74,7 @@ class Person {
 	}
 	
 	public int getAge() {
-		return this.age
+		this.age
 	}
 	
 	public void setAge(int age) {
@@ -87,6 +87,6 @@ class Person {
 		message = message + "My name is: " + this.name +"\n"
 		message = message + "and have "+ this.age + " years old."
 		System.out.println message
-		return message
+		message
 	}
 }
