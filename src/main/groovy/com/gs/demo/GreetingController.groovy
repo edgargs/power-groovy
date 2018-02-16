@@ -25,14 +25,14 @@ public class GreetingController {
 		myPerson.setAge(35)
 		
 		Map<String, Double> mapCryptoCurrency = new HashMap<>()
-		mapCryptoCurrency.put("XPR",1.07)
-		mapCryptoCurrency.put("BTC",2.09)
+		mapCryptoCurrency.put "XPR",1.07
+		mapCryptoCurrency.put "BTC",2.09
 		String virtual = "The price for \"BTC\" is " + mapCryptoCurrency.get("BTC")
 		
 		ArrayList<String> mylist = new ArrayList<>()
-		mylist.add("Grace")
-		mylist.add("Rob")
-		mylist.add("Emmy")
+		mylist.add "Grace"
+		mylist.add "Rob"
+		mylist.add "Emmy"
 		
 		String myname = myPerson.getName()
 		int myage = myPerson.getAge()
@@ -86,7 +86,7 @@ class Person {
 		message = message + "Hello,\n"
 		message = message + "My name is: " + this.name +"\n"
 		message = message + "and have "+ this.age + " years old."
-		System.out.println(message)
+		System.out.println message
 		return message
 	}
 }
