@@ -4,10 +4,6 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
-import java.util.ArrayList
-import java.util.HashMap
-import java.util.Map
-
 @RestController
 class GreetingController {
 
@@ -86,7 +82,7 @@ class Person {
 		message = message + "Hello,\n"
 		message = message + "My name is: " + this.name +"\n"
 		message = message + "and have "+ this.age + " years old."
-		System.out.println message
+		println message
 		message
 	}
 }
