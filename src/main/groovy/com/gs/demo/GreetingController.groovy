@@ -9,8 +9,8 @@ class GreetingController {
 	
 	// http://localhost:8080/hello?name=Edgar
 	@RequestMapping("/hello")
-	def hello(@RequestParam(value="name", defaultValue="World")def name) {
-		"Hello, $name!"
+	def hello(String name) {
+		"Hello, ${name?:'World'}!"
 	}
 	
 	@RequestMapping("/greeting")
