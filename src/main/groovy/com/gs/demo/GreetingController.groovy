@@ -43,10 +43,10 @@ class Person {
 	private int age
 	
 	def sayHello() {
-		def message = ""
-		message = message + "Hello,\n"
-		message = message + "My name is: $name\n"
-		message = message + "and have $age years old."
+		def message = """
+		Hello,
+		My name is: $name
+		and have $age years old."""
 		println message
 		message
 	}
