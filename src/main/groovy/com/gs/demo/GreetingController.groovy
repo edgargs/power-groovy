@@ -22,10 +22,7 @@ class GreetingController {
 		mapCryptoCurrency.put "BTC",2.09
 		def virtual = "The price for \"BTC\" is " + mapCryptoCurrency.get("BTC")
 		
-		ArrayList<String> mylist = new ArrayList<>()
-		mylist.add "Grace"
-		mylist.add "Rob"
-		mylist.add "Emmy"
+		def mylist = ["Grace", "Rob", "Emmy"]
 		
 		def (myname, myage) = [myPerson.name, myPerson.age]
 		
