@@ -18,7 +18,7 @@ class GreetingController {
 	@RequestMapping("/greeting")
 	def greeting(@RequestParam(value="name", defaultValue="World")def name) {
 		def myPerson = new Person(name)
-		myPerson.setAge(35)
+		myPerson.age = 35
 		
 		Map<String, Double> mapCryptoCurrency = new HashMap<>()
 		mapCryptoCurrency.put "XPR",1.07
@@ -30,8 +30,8 @@ class GreetingController {
 		mylist.add "Rob"
 		mylist.add "Emmy"
 		
-		def myname = myPerson.getName()
-		def myage = myPerson.getAge()
+		def myname = myPerson.name
+		def myage = myPerson.age
 		
 		def message = null
 		if(mylist.contains(myname)) {
@@ -59,22 +59,6 @@ class Person {
 	
 	Person(def name) {
 		this.name = name
-	}
-	
-	def getName() {
-		this.name
-	}
-	
-	void setName(def name) {
-		this.name = name
-	}
-	
-	int getAge() {
-		this.age
-	}
-	
-	void setAge(int age) {
-		this.age = age
 	}
 	
 	def sayHello() {
