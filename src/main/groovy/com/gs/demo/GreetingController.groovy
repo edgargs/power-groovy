@@ -9,18 +9,18 @@ import java.util.HashMap
 import java.util.Map
 
 @RestController
-public class GreetingController {
+class GreetingController {
 
 	private static final String template = "Hello, %s!"
 	
 	// http://localhost:8080/hello?name=Edgar
 	@RequestMapping("/hello")
-	public String hello(@RequestParam(value="name", defaultValue="World")String name) {
+	String hello(@RequestParam(value="name", defaultValue="World")String name) {
 		String.format(template, name)
 	}
 	
 	@RequestMapping("/greeting")
-	public String greeting(@RequestParam(value="name", defaultValue="World")String name) {
+	String greeting(@RequestParam(value="name", defaultValue="World")String name) {
 		Person myPerson = new Person(name)
 		myPerson.setAge(35)
 		
@@ -53,35 +53,35 @@ class Person {
 	private String name
 	private int age
 	
-	public Person() {		
+	Person() {		
 	}
 	
-	public Person(String name, int age) {
+	Person(String name, int age) {
 		this.name = name
 		this.age = age
 	}
 	
-	public Person(String name) {
+	Person(String name) {
 		this.name = name
 	}
 	
-	public String getName() {
+	String getName() {
 		this.name
 	}
 	
-	public void setName(String name) {
+	void setName(String name) {
 		this.name = name
 	}
 	
-	public int getAge() {
+	int getAge() {
 		this.age
 	}
 	
-	public void setAge(int age) {
+	void setAge(int age) {
 		this.age = age
 	}
 	
-	public String sayHello() {
+	String sayHello() {
 		String message = ""
 		message = message + "Hello,\n"
 		message = message + "My name is: " + this.name +"\n"
