@@ -20,7 +20,8 @@ class GreetingController {
 		Map<String, Double> mapCryptoCurrency = new HashMap<>()
 		mapCryptoCurrency.put "XPR",1.07
 		mapCryptoCurrency.put "BTC",2.09
-		def virtual = "The price for \"BTC\" is " + mapCryptoCurrency.get("BTC")
+		def virtual = 'The price for "BTC" is ' + mapCryptoCurrency.get("BTC")
+		println virtual
 		
 		def mylist = ["Grace", "Rob", "Emmy"]
 		
